@@ -14,16 +14,36 @@ public class App {
      * y devuelve en entero, los segundos equivalentes. Si hay un error, devuelve -1. 
      *  Adaptado de edabit
      */
-    
-
+        public static int Convertir_min_sec (int minutos){
+        try {
+            int total_segundos = 0;
+            byte segX_min = 60; //Para no quemar datos
+            total_segundos = minutos * segX_min;
+            return total_segundos;
+        } 
+        catch (Exception e) {
+            return -1;
+        }
+     }
 
      /*
      * 2. Diseña el algoritmo y programa la función Validar_iguales que recibe dos números shorts 
      * y devuelve un booleano true si son iguales, false si no lo son. Si hay un error, devuelve false también.
      *  Adaptado de edabit
      */
-
-
+        public static boolean Validar_iguales (short nro1, short nro2){
+        try {
+            boolean son_inguales = false; //Para que no sea necesario el else
+            if (nro1==nro2)
+                son_inguales = true;
+            else 
+                son_inguales = false; //Else podría sobrar
+            return son_inguales;
+        } 
+        catch (Exception e) {
+            return false;
+        }
+     }
 
     /*
      * 3. Diseña el algoritmo y programa la función Calcular_potencia que recibe en un short el voltaje y en 
@@ -31,7 +51,14 @@ public class App {
      * Si hay un error, devuelve 0.
      *  Adaptado de edabit
      */
-
-
-
+        public static float Calcular_potencia (short voltaje, byte corriente){
+        try {
+            float potencia = 0;
+            potencia = voltaje * corriente;
+            return potencia;
+        } 
+        catch (Exception e) {
+            return 0;
+        }
+     }
 }
